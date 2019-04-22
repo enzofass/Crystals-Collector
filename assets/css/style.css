@@ -1,0 +1,31 @@
+#main-body {
+  background: url(../images/crystal-textured-background-illustration.jpg);
+}
+
+#main-head {
+  background: rgb(153, 73, 8);
+  color: antiquewhite;
+  margin: 5px;
+  padding: 30px;
+  
+}
+#game-rules {
+  background: tan;
+  color: green
+}
+
+#win-loss {
+  background: turquoise;
+}
+
+.play-num-div {
+  background: darkcyan;
+}
+#pay-num-text {
+  background: darkcyan;
+  padding: 10px 100px;
+}
+
+.num-box {
+  padding: 30px 100px;
+}
