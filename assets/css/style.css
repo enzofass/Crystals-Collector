@@ -3,26 +3,33 @@
 }
 
 #main-head {
-  background: rgb(153, 73, 8);
+  background: rgb(100, 99, 98);
   color: antiquewhite;
   margin: 5px;
   padding: 30px;
   
 }
 #game-rules {
-  background: tan;
-  color: green
+  background: rgb(141, 122, 97);
+  color: rgb(26, 243, 26)
 }
 
 #win-loss {
   background: turquoise;
 }
 
+.rand-num-div {
+  background: darkslategrey;
+  color: antiquewhite;
+}
+
 .play-num-div {
   background: darkcyan;
+  color: antiquewhite;
 }
-#pay-num-text {
-  background: darkcyan;
+
+#play-num-text {
+  background: rgb(111, 158, 158);
   padding: 10px 100px;
 }
 
