@@ -7,11 +7,10 @@
   color: antiquewhite;
   margin: 5px;
   padding: 30px;
-  
 }
 #game-rules {
   background: rgb(141, 122, 97);
-  color: rgb(26, 243, 26)
+  color: rgb(26, 243, 26);
 }
 
 #win-loss {

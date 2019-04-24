@@ -9,7 +9,7 @@ let totalWin = 0;
 let totalLoss = 0;
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-// function to generate randaom number with min and max 
+// function to generate randaom number with min and max
 function getRandomNum(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
@@ -34,7 +34,7 @@ function shuffle(array) {
   return array;
 }
 
-// function is called at the beginning and also if player wins or losses 
+// function is called at the beginning and also if player wins or losses
 function restartGame() {
   magicNum = getRandomNum(25, 100);
   $("#rand-num").html(magicNum);
@@ -44,7 +44,6 @@ function restartGame() {
   blueCrystalValue = arr[4];
   yellowCrystalValue = arr[6];
   greenCrystalValue = arr[8];
-  
 }
 
 // function is called after we add the crystal value to players number to determine if won or lost
@@ -71,7 +70,6 @@ $(".crystals").on("click", function(event) {
   console.log("crystal clicked", $(this).data("crystal"));
   switchCaseFunc($(this).data("crystal"));
 });
-
 
 // switch case to dtermine which crystal was clicked and add crystal value to player number, after we check status of the score
 function switchCaseFunc(color) {
