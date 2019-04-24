@@ -20,7 +20,7 @@ function addCrystalNum(crystalNum, playerNum) {
 
 function restartGame() {
   // if (playerNumSum === 0 || newGame) {
-  magicNum = getRandomNum(1, 100);
+  magicNum = getRandomNum(20, 100);
   $("#rand-num").html(magicNum);
   playerNumSum = 0;
   redCrystalValue = getRandomNum(1, 12);
@@ -42,7 +42,6 @@ function checkScore() {
     totalWin++;
     $("#wins").html(totalWin);
     restartGame();
-  } else {
   }
 }
 // code trying to make it so that crytal values are different
@@ -57,7 +56,7 @@ function checkScore() {
 //   greenCrystalValue = getRandomNum(1, 12);
 // }
 restartGame();
-// click listeners
+// click listener
 $(".crystals").on("click", function(event) {
   console.log("crystal clicked", $(this).data("crystal"));
   switchCaseFunc($(this).data("crystal"));
