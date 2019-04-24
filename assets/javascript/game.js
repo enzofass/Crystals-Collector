@@ -7,29 +7,47 @@ let playerNumSum = 0;
 let magicNum = 0;
 let totalWin = 0;
 let totalLoss = 0;
-let newGame = false;
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-// function to generate randaom number
+// function to generate randaom number with min and max 
 function getRandomNum(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
-// function to add crystal number to players number
-function addCrystalNum(crystalNum, playerNum) {
-  return crystalNum + playerNum;
+
+// shuffle array to generate an array of random numbers. This way each crystal has a unique number (found this online :D)
+function shuffle(array) {
+  let currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
 }
 
+// function is called at the beginning and also if player wins or losses 
 function restartGame() {
-  // if (playerNumSum === 0 || newGame) {
-  magicNum = getRandomNum(20, 100);
+  magicNum = getRandomNum(25, 100);
   $("#rand-num").html(magicNum);
   playerNumSum = 0;
-  redCrystalValue = getRandomNum(1, 12);
-  blueCrystalValue = getRandomNum(1, 12);
-  yellowCrystalValue = getRandomNum(1, 12);
-  greenCrystalValue = getRandomNum(1, 12);
-  newGame = false;
+  arr = shuffle(arr);
+  redCrystalValue = arr[2];
+  blueCrystalValue = arr[4];
+  yellowCrystalValue = arr[6];
+  greenCrystalValue = arr[8];
+  
 }
 
+// function is called after we add the crystal value to players number to determine if won or lost
 function checkScore() {
   console.log(playerNumSum, magicNum);
   if (playerNumSum > magicNum) {
@@ -44,54 +62,43 @@ function checkScore() {
     restartGame();
   }
 }
-// code trying to make it so that crytal values are different
-// }if (redCrystalValue === blueCrystalValue) {
-//   blueCrystalValue = getRandomNum(1, 12);
-// }if (blueCrystalValue != redCrystalValue) {
-//   yellowCrystalValue = getRandomNum(1, 12);
-// }if (yellowCrystalValue != blueCrystalValue){
-//   greenCrystalValue = getRandomNum(1, 12);
-// }else{
-//   yellowCrystalValue = getRandomNum(1, 12);
-//   greenCrystalValue = getRandomNum(1, 12);
-// }
+
+// Initialize Game
 restartGame();
+
 // click listener
 $(".crystals").on("click", function(event) {
   console.log("crystal clicked", $(this).data("crystal"));
   switchCaseFunc($(this).data("crystal"));
 });
 
+
+// switch case to dtermine which crystal was clicked and add crystal value to player number, after we check status of the score
 function switchCaseFunc(color) {
   switch (color) {
     case "red":
       console.log("Red case init", redCrystalValue);
-      // addCrystalNum(redCrystalValue, playerNumSum);
       playerNumSum = playerNumSum + redCrystalValue;
       $("#play-num").html(playerNumSum);
       checkScore();
-
       break;
     case "blue":
       console.log("Blue case init", blueCrystalValue);
       playerNumSum = playerNumSum + blueCrystalValue;
       $("#play-num").html(playerNumSum);
       checkScore();
-
       break;
     case "yellow":
       console.log("Yellow case init", yellowCrystalValue);
       playerNumSum = playerNumSum + yellowCrystalValue;
       $("#play-num").html(playerNumSum);
       checkScore();
-
       break;
     case "green":
       console.log("Green case init", greenCrystalValue);
       playerNumSum = playerNumSum + greenCrystalValue;
       $("#play-num").html(playerNumSum);
       checkScore();
-
       break;
     default:
       text = "No value found";
