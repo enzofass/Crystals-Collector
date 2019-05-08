@@ -1,0 +1,37 @@
+#main-body {
+  background: url(../images/crystal-textured-background-illustration.jpg);
+}
+
+#main-head {
+  background: rgb(100, 99, 98);
+  color: antiquewhite;
+  margin: 5px;
+  padding: 30px;
+}
+#game-rules {
+  background: rgb(141, 122, 97);
+  color: rgb(26, 243, 26);
+}
+
+#win-loss {
+  background: turquoise;
+}
+
+.rand-num-div {
+  background: darkslategrey;
+  color: antiquewhite;
+}
+
+.play-num-div {
+  background: darkcyan;
+  color: antiquewhite;
+}
+
+#play-num-text {
+  background: rgb(111, 158, 158);
+  padding: 10px 100px;
+}
+
+.num-box {
+  padding: 30px 100px;
+}
